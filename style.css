@@ -108,7 +108,7 @@ header img {
 }
 
 #lists {
-    width: 20%;
+    width: 18%;
     border-right: 1px solid #E2E2E2;
     height: calc(100vh - 52px);
     padding: 20px 20px 0 0;
@@ -177,7 +177,7 @@ header img {
 }
 
 #items {
-    width: 35%;
+    width: 30%;
     border-right: 1px solid #E2E2E2;
     height: calc(100vh - 52px);
     padding: 20px 20px;
@@ -271,4 +271,44 @@ header img {
 
 .productCard.active h3 {
     color: #fff;
+}
+
+#details {
+    width: 52%;
+    height: calc(100vh - 52px);
+    padding: 20px 0 20px 20px;
+}
+
+#detailProductPanel {
+    border-radius: 8px;
+    box-shadow: 2px 7px 10px 2px #00000012;
+}
+
+#detailProductPanel .productHeader {
+    background: #F5F5FA;
+    border-radius: 8px 8px 0 0;
+    border-bottom: 1px solid #EBEBEB;
+    padding: 10px;
+}
+
+#detailProductPanel .productDetails {
+    padding: 30px 50px;
+    display: flex;
+}
+
+#detailProductPanel .productDetails .gallery {
+    width: 45%;
+}
+
+#detailProductPanel .productDetails .gallery img {
+    max-width: 100%;
+}
+
+#detailProductPanel .productDetails .data {
+    width: 55%;
+    padding: 0 25px;
+}
+
+#detailProductPanel .details {
+    padding: 30px 50px;
 }
