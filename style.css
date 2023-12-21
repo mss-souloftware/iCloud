@@ -9,6 +9,7 @@
 body,
 html {
     height: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -79,6 +80,7 @@ header img {
     border: 1px solid #E7E7E7;
     background: #fff;
     transition: all .5s linear;
+    z-index: 9999 !important;
 }
 
 #profilePop.show {
@@ -347,6 +349,9 @@ header img {
     width: 70%;
 }
 
+.backBtn {
+    display: none;
+}
 
 /* Conditionals */
 
@@ -359,18 +364,55 @@ header img {
 @media(max-width:991px) {
     .container {
         padding: 0 15px;
+        position: relative;
     }
 
-    #items {
-        padding: 20px 10px;
+    #lists .toggler,
+    #lists .refresh {
+        display: none;
     }
 
+    .backBtn {
+        display: flex;
+        align-items: center;
+        color: #2E69D4;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    #lists,
+    #items,
     #details {
-        padding: 20px 0 20px 10px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding: 20px 10px;
+        background: #fff;
+        transition: all .3s linear;
     }
 
     #lists {
-        padding: 20px 10px 0 0;
+        z-index: 3;
+    }
+
+    #items {
+        z-index: 4;
+        transform: translate(100%, 0);
+    }
+
+    #details {
+        z-index: 5;
+        transform: translate(100%, 0);
+    }
+
+    #items.active,
+    #details.active {
+        transform: translate(0%, 0);
+    }
+
+    #detailProductPanel {
+        margin: 20px 0 0 0;
     }
 
     #detailProductPanel .productDetails {
@@ -395,5 +437,16 @@ header img {
 
     .productCard {
         padding: 10px 10px 10px 15px;
+    }
+}
+
+@media(max-width:786px) {
+    #detailProductPanel .productDetails {
+        flex-flow: column;
+    }
+
+    #detailProductPanel .productDetails .gallery,
+    #detailProductPanel .productDetails .data {
+        width: 100%;
     }
 }
