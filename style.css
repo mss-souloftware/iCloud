@@ -75,8 +75,8 @@ header img {
     box-shadow: 2px 7px 10px 2px #00000012;
     border-radius: 10px;
     position: fixed;
-    right: 20px;
-    bottom: -100%;
+    right: -100%;
+    top: 50px;
     border: 1px solid #E7E7E7;
     background: #fff;
     transition: all .5s linear;
@@ -84,7 +84,7 @@ header img {
 }
 
 #profilePop.show {
-    bottom: 5% !important;
+    right: 5px !important;
 }
 
 
@@ -95,6 +95,19 @@ header img {
     border-radius: 10px 10px 0px 0px;
     font-size: 18px;
     font-weight: 600;
+}
+
+#profilePop .header:before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #F5F5F7;
+    top: -8px;
+    right: 25px;
+    transform: rotate(45deg);
+    border-left: 1px solid #DFDFDF;
+    border-top: 1px solid #DFDFDF;
 }
 
 #profilePop a {
@@ -115,6 +128,7 @@ header img {
     border-right: 1px solid #E2E2E2;
     height: calc(100vh - 52px);
     padding: 20px 20px 0 0;
+    min-width: 185px !important;
     /* transition: all .3s linear; */
 }
 
@@ -126,6 +140,7 @@ header img {
 #lists .toggler,
 #lists .refresh {
     width: 50%;
+    cursor: pointer;
 }
 
 #lists .toggler img,
@@ -190,27 +205,43 @@ header img {
     border-right: 1px solid #E2E2E2;
     height: calc(100vh - 52px);
     padding: 20px 20px;
+    min-width: 245px;
 }
 
 #search {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #2E69D4;
+    background: #fff;
     padding: 5px;
     border-radius: 8px;
     margin-left: auto;
+    border: 1px solid #2E69D4;
+    margin-top: -5px;
+    cursor: pointer;
 }
 
 #search img {
     width: 20px;
     height: 20px;
     object-fit: contain;
+}
+
+#search.show {
+    background: #2E69D4;
+}
+
+#search.show img {
     filter: invert(1) brightness(10) contrast(5);
 }
 
 #searchbar {
+    display: none;
     margin-top: 20px;
+}
+
+#searchbar.show {
+    display: block;
 }
 
 #searchbar input[type="search"] {
@@ -231,6 +262,7 @@ header img {
     margin-left: auto;
     cursor: pointer;
     color: #0070E9;
+    min-width: 45px;
 }
 
 .productCard {
@@ -287,6 +319,7 @@ header img {
     width: 52%;
     height: calc(100vh - 52px);
     padding: 20px 0 20px 20px;
+    min-width: 600px;
 }
 
 #detailProductPanel {
@@ -325,9 +358,10 @@ header img {
 
 /* Conditionals */
 #lists.hide {
-    width: 0%;
+    width: 0% !important;
     padding: 20px 0 0 0;
     border: none;
+    min-width: 0px !important;
 }
 
 /* #lists.hide .toggler {
@@ -384,7 +418,7 @@ header img {
     #lists,
     #items,
     #details {
-        width: 100%;
+        width: 100% !important;
         position: absolute;
         left: 0;
         top: 0;
